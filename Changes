@@ -1,5 +1,76 @@
 Revision history for Perl extension Image::DS9.
 
+0.13  Tue Oct 30 00:24:14 EST 2001
+	- results buffer splitting didn't ignore leading white space,
+	  leading to extra leading elements in the returned array.
+	- added pan function
+	- added regions load and save options
+	- scale(S_limits) wasn't calling _Get properly to return the limits.
+	- wcs query had wrong value of res_wanthash in _Get call
+	- DS9 v2.1 uses 'cmap' instead of 'colormap'.  I've switched
+	  over to 'cmap' since everyone should upgrade to DS9 v2.1.
+
+0.12  Mon Oct 22 10:18:27 EDT 2001
+	- removed definitions of TRUE and FALSE; was causing Export problems.
+
+0.11  Fri Oct 12 13:22:02 EDT 2001
+        - implemented scale datasec
+
+0.11  Thu Oct 11 17:35:35 EDT 2001
+        - frame hide now takes an argument (so can do hide all)
+	- frame all implemented so can get list of all frames
+	- updated tile_mode so that one can set/get the grid mode attributes.
+
+0.106
+	- more aggressive cleaning of WCS keywords
+
+0.105
+	- colormap was incorrectly looking at $state
+	  instead of $colormap when looking for the inversion tag
+
+0.104  Mon Aug 13 14:17:46 EDT 2001
+        - ensured that the CTYPE? WCS keywords are surrounded by 
+	  apostrophes
+
+0.103
+	- didn't create the wcs export tag
+
+0.102
+	- Forget Rg_file in export list
+0.101
+	- array() may now take a one-dimensional piddle
+	- cleaned up detection of piddles
+
+0.10
+	Externals:
+	- added invert option to colormap()
+	- added save option to file()
+	- added bin()
+	- added crosshair()
+	- added cursor()
+	- added lower()
+	- added raise()
+	- added regions()
+	- added wcs()
+	- added view()
+	- renamed T_Grid, T_Column, and T_Row to T_grid, T_column,
+	  T_row
+
+	- iconify() didn't return a true/false value (it directly
+	  returned what DS9 sent it).
+	- bugs fixed in display() code for queries which had errors
+	- fixed up return for scale(S_limits) to be more consistent
+
+	- Set() and Get() (low level access to XPA channel) are
+	  now documented
+
+	Internals:
+	- cleaned up module setup code and creation of export tags
+	- lots more error checking of arguments. this may make
+	  following updates to DS9 a little more work, but makes
+	  it easier for users of this module
+	- improvements to documentation
+
 0.09  Fri Sep  8 23:31:03 EDT 2000
 	- confused max index with number of elements in check
 	  for correct number of arguments for scale( 'limits' )
