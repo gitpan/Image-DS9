@@ -1,5 +1,21 @@
 Revision history for Perl extension Image::DS9.
 
+0.09  Fri Sep  8 23:31:03 EDT 2000
+	- confused max index with number of elements in check
+	  for correct number of arguments for scale( 'limits' )
+
+0.08  Wed Aug  2 12:15:40 EDT 2000
+        - made compatible with API change in IPC::XPA v0.04.
+	- _Get() now more flexible about chomping buf and messages;
+	- implemented res_wanthash attribute
+	- implemented verbose attribute
+	- most ops arrays available as useful ones as @xxx_ops_dbg
+	- cleaned up ops stuff a bit to make less problematic to add stuff
+	- queries now take into account whether in list or scalar mode
+          and return either the hash or the value of {buf}, respectively
+	- added iconify(), mode(), orient(), rotate().
+	- made scale(), zoom(), and display() queryable
+
 0.07  Thu May 11 13:48:37 EDT 2000
 	- max_servers could default to zero if no servers
 	  were running; this would cause problems later if
