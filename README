@@ -1,0 +1,53 @@
+Image::DS9 is an interface to the DS9 program developed by the
+Smithsonian Astrophysical Observatory's High Energy Astrophysics R&D
+Group.  DS9 is a flexible and feature laden image display and analysis
+program.  While targeted at the astronomical community, it is
+versatile enough to be used with success by others.
+
+Image::DS9 is in a very embryonic state; it does not support all of DS9's
+features, and the API may change.  It requires the IPC::XPA module to
+communicate with ds9.  It is being developed to interoperate with PDL.
+
+For details on DS9, including the source (and binaries for some
+platforms), please refer to 
+
+	http://hea-www.harvard.edu/RD/ds9/
+
+IPC::XPA is available from CPAN; it requires the XPA library available
+at
+
+	http://hea-www.harvard.edu/RD/xpa/
+
+
+INSTALLATION
+------------
+This package has been tested on Perl 5.005_01, and xpa 2.0.3.  The
+only platform it's been tested on is Solaris 2.6.
+
+You will need to install IPC::XPA first.
+
+To compile, test and install Image::DS9,
+
+	perl Makefile.PL
+	make
+	make install
+
+Unfortunately, there are not tests yet defined.
+
+To install a private copy, try something like
+
+	perl Makefile.PL PREFIX=~/perl
+
+to generate the Makefile.
+
+COPYRIGHT
+---------
+(C) 2000 Smithsonian Astrophysical Observatory.  All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+AUTHOR
+------
+Diab Jerius ( djerius@cfa.harvard.edu )
+

@@ -1,0 +1,38 @@
+Revision history for Perl extension Image::DS9.
+
+0.07  Thu May 11 13:48:37 EDT 2000
+	- max_servers could default to zero if no servers
+	  were running; this would cause problems later if
+	  one was started up.  it now defaults to at least one.
+	- $self->{res} is always updated after Set.
+	- the frame show command was incorrectly implemented.
+
+0.06  Wed May 10 13:24:39 EDT 2000
+	- renamed frame ops once more
+	- renamed file ops to filetype
+	- removed tile() and blink()
+	- move _Set() and _Get to Set() and Get(); no docs yet
+	- added display(), scale(), zoom()
+	- returned buffers from Get are now chomped
+
+0.05  Tue May  9 11:35:39 EDT 2000
+	- added more frame op tags
+	- made op tags more readable (lowercased)
+	- added set_attrs method (not yet documented)
+	- set max_servers to nservers() in the constructure
+	- fixed many stupid details I forgot when adding the file method
+
+0.04  Mon May  8 19:30:15 EDT 2000
+	- added file method
+
+0.03  Thu May  4 10:04:32 EDT 2000
+	- revised check for PDL to be cleaner
+	- added min_servers check & croak
+
+0.02  Wed Apr 26 15:19:46 EDT 2000
+	- added tile and tile_mode.
+	- if max_server == 1, return nicer output from retrieves.
+
+0.01  Mon Apr 24 20:08:57 2000
+	- original version; created by h2xs 1.18
+
