@@ -1,0 +1,543 @@
+2009-06-01 11:51 -0400  djerius  <djerius@cfa.harvard.edu>  (314137436a2a [tip])
+
+	* Makefile.PL:
+	now use Module::Install
+
+2009-06-01 11:45 -0400  djerius  <djerius@cfa.harvard.edu>  (cf98204fbf2b)
+
+	* MANIFEST.SKIP:
+	required fits files were not being distributed
+
+2009-06-01 11:26 -0400  djerius  <djerius@cfa.harvard.edu>  (9d0bab2a6ca7)
+
+	* t/pixeltable.t:
+	looks like no pixeltable tests can be run
+
+2009-06-01 11:25 -0400  djerius  <djerius@cfa.harvard.edu>  (976beb113c58)
+
+	* t/print.t:
+	forgot to update number of tests
+
+2009-06-01 11:23 -0400  djerius  <djerius@cfa.harvard.edu>  (64027ea9d946)
+
+	* t/regions.t:
+	track new ds9 regions format
+
+2009-06-01 11:12 -0400  djerius  <djerius@cfa.harvard.edu>  (2f11620c5333)
+
+	* DS9/Grammar.pm, t/print.t:
+	print command no longer has resolution sub command
+
+2009-06-01 11:11 -0400  djerius  <djerius@cfa.harvard.edu>  (268dff7ac365)
+
+	* t/nameserver.t:
+	workaround bug in ds9 5.6.3 nameserver sky format query
+
+2009-06-01 11:10 -0400  djerius  <djerius@cfa.harvard.edu>  (d7bc90f1421e)
+
+	* t/pixeltable.t:
+	workaround currently untestable (new) behavior in pixeltable
+
+2009-06-01 11:10 -0400  djerius  <djerius@cfa.harvard.edu>  (f7f721689966)
+
+	* t/frame.t:
+	frame numbering after delete has changed. work around race
+	condition.
+
+2009-06-01 11:09 -0400  djerius  <djerius@cfa.harvard.edu>  (f2760e4d3d04)
+
+	* DS9/Grammar.pm, t/dss.t:
+	dss command is now broken out into separate commands for the
+	different servers
+
+2009-06-01 11:01 -0400  djerius  <djerius@cfa.harvard.edu>  (5d6a01443070)
+
+	* DS9/Grammar.pm, t/bin.t:
+	bin factor may now take one or two arguments (x and y). it always
+	returns both.
+
+2009-06-01 10:58 -0400  djerius  <djerius@cfa.harvard.edu>  (9ade27f7a8d1)
+
+	* DS9.pm:
+	version() now returns just the actual version number.
+
+2009-05-29 15:48 -0400  djerius  <djerius@cfa.harvard.edu>  (f9b4726b9b15)
+
+	* DS9/Parser.pm:
+	minor update to grammer parsing
+
+2009-05-29 15:47 -0400  djerius  <djerius@cfa.harvard.edu>  (7039e04e3f3a)
+
+	* MANIFEST.SKIP:
+	update manifest skip rules
+
+2009-05-29 15:46 -0400  djerius  <djerius@cfa.harvard.edu>  (4f8bc8919e12)
+
+	* GNUmakefile, MANIFEST: deleted file.
+	* GNUmakefile, MANIFEST:
+	remove unneeded cruft from repo
+
+2008-04-04 20:57 +0000  convert-repo  <convert-repo>  (ca573df487e3)
+
+	* .hgtags: new file.
+	* .hgtags:
+	update tags
+
+2007-10-21 14:00 -0400  gaetz  <gaetz>  (fd12cc7ce8e0)
+
+	* ChangeLog: new file.
+	* ChangeLog:
+	added ChangeLog
+
+2002-09-30 20:40 -0400  dj  <dj>  (b9b356e3bc11 [V0_18])
+
+	* Changes, DS9.pm, TODO:
+	*** empty log message ***
+
+2002-09-30 20:37 -0400  dj  <dj>  (c04056259887)
+
+	* DS9.pm:
+	- implement ResErrXXXX option parsing
+	- catch bogus options
+	- don't Close a non-existant xpa connection
+	- translate colormap to cmap
+
+2002-09-30 20:35 -0400  dj  <dj>  (9d8720778f61)
+
+	* DS9.pod:
+	document ResErrXXX options
+
+2002-09-30 20:35 -0400  dj  <dj>  (d03edea998c2)
+
+	* DS9/Command.pm:
+	- pass command name to parser for error messages
+	- implement ResErrXXXX options
+
+2002-09-30 20:34 -0400  dj  <dj>  (3f2c725972ab)
+
+	* DS9/Grammar.pm:
+	- fix up bin cols return for 2 or three values (sort of)
+	- incorrect contour save grammar
+	- implemented contour load
+
+2002-09-30 20:33 -0400  dj  <dj>  (ddb37a3276f9)
+
+	* DS9/Parser.pm:
+	make croaks give command name
+
+2002-09-30 20:33 -0400  dj  <dj>  (34278bd0305f)
+
+	* t/common.pl:
+	start up test specific ds9
+
+2002-09-30 20:32 -0400  dj  <dj>  (0d8560edb770)
+
+	* t/array.t:
+	be smarter about checking for PDL
+
+2002-09-26 19:31 -0400  dj  <dj>  (e9eac86eebcf [V0_17 **INVALID**])
+
+	* README:
+	*** empty log message ***
+
+2002-09-26 18:59 -0400  dj  <dj>  (dd07c7c66c82)
+
+	* DS9/Constants.pm:
+	use correct default constant prefix
+
+2002-09-26 15:09 -0400  dj  <dj>  (d64aced740ff)
+
+	* DS9/Grammar.pm, DS9/PConsts.pm, t/bin.t:
+	all filter args are now stripped of blanks
+
+2002-09-26 11:59 -0400  dj  <dj>  (8b7b13e201ea)
+
+	* t/array.t: new file.
+	* t/pdl.t: deleted file.
+	* MANIFEST, t/array.t, t/pdl.t:
+	rename pdl.t to array.t
+
+2002-09-26 11:56 -0400  dj  <dj>  (edac23317b09)
+
+	* DS9.pm, t/cursor.t, t/fits.t, t/grid.t, t/lower.t, t/pdl.t,
+	t/raise.t, t/version.t:
+	test fixups
+
+2002-09-25 17:51 -0400  dj  <dj>  (b6d4cff1e910)
+
+	* t/pdl.t:
+	*** empty log message ***
+
+2002-09-25 17:20 -0400  dj  <dj>  (304afe3c2ba2)
+
+	* DS9/Command.pm, DS9/Constants.pm, DS9/Grammar.pm,
+	DS9/OldConstants.pm, DS9/PConsts.pm, DS9/Parser.pm, TODO,
+	snooker.fits.gz: new file.
+	* snooker.fits, snooker.grid, snooker.img.fits.gz, test.pl: deleted
+	file.
+	* Changes, DS9.pm, DS9.pod, DS9/Command.pm, DS9/Constants.pm,
+	DS9/Grammar.pm, DS9/OldConstants.pm, DS9/PConsts.pm, DS9/Parser.pm,
+	MANIFEST, MANIFEST.SKIP, README, TODO, m31.fits.gz, snooker.fits,
+	snooker.fits.gz, snooker.grid, snooker.img.fits.gz, test.pl:
+	lots of changes; updates to tests, constants
+
+2002-09-25 17:19 -0400  dj  <dj>  (e62e91cbc0cb)
+
+	* t/bin.t, t/blink.t, t/cmap.t, t/common.pl, t/contour.t,
+	t/crosshair.t, t/cursor.t, t/file.t, t/fits.t, t/frame.t, t/grid.t,
+	t/iconify.t, t/lower.t, t/minmax.t, t/mode.t, t/nameserver.t,
+	t/orient.t, t/page.t, t/pan.t, t/pdl.t, t/pixeltable.t, t/print.t,
+	t/raise.t, t/regions.t, t/rotate.t, t/single.t, t/tile.t,
+	t/version.t, t/view.t, t/wcs.t, t/zoom.t: new file.
+	* t/frames.t, t/tile_mode.t: deleted file.
+	* t/bin.t, t/blink.t, t/cmap.t, t/common.pl, t/contour.t,
+	t/crosshair.t, t/cursor.t, t/dss.t, t/file.t, t/fits.t, t/frame.t,
+	t/frames.t, t/grid.t, t/iconify.t, t/lower.t, t/minmax.t, t/mode.t,
+	t/nameserver.t, t/orient.t, t/page.t, t/pan.t, t/pdl.t,
+	t/pixeltable.t, t/print.t, t/raise.t, t/regions.t, t/rotate.t,
+	t/scale.t, t/single.t, t/tile.t, t/tile_mode.t, t/version.t,
+	t/view.t, t/wcs.t, t/zoom.t:
+	*** empty log message ***
+
+2002-09-23 18:44 -0400  dj  <dj>  (764692fa1f94 [V0_16])
+
+	* DS9.pod: new file.
+	* Changes, DS9.pod:
+	*** empty log message ***
+
+2002-09-23 18:41 -0400  dj  <dj>  (3b17e3e19c48)
+
+	* m31.fits.gz, snooker.fits, snooker.grid, snooker.img.fits.gz: new
+	file.
+	* Changes, README, m31.fits.gz, snooker.fits, snooker.grid,
+	snooker.img.fits.gz:
+	*** empty log message ***
+
+2002-09-23 18:35 -0400  dj  <dj>  (ac4e4623f34d)
+
+	* Changes, DS9.pm, MANIFEST, MANIFEST.SKIP, Makefile.PL, README,
+	test.pl:
+	now uses a table driven parser to generate the methods and data
+	conversion between Perl and DS9.
+
+	realized the futility of keeping the docs up-to-date in parallel
+	with DS9. Now just list the options supported, rather than
+	duplicate the DS9 docs.
+
+	the display() and tile_mode() methods are no longer supported.
+	display() was an attempt to unify tile, blink, and single in a clean
+	way. I've decided to just track the actual XPA access methods
+	rather than foist my view of how things should tie together. So,
+	display() should be replaced with the appropriate calls to tile(),
+	blink(), or single(). tile_mode() was really tile() all along...
+
+	earlier versions of this package had a gadzillion constants for all
+	of the commands and subcommands and enumerated values. this was a
+	real mess. the constants are now in their own package, and are
+	deprecated.
+
+2002-08-30 20:01 -0400  dj  <dj>  (b8e4ccd0a70e)
+
+	* DS9.pm:
+	checking wrong element in array for coords value in pan
+
+2002-04-12 16:58 -0400  dj  <dj>  (8555e47b7f8f [V0_15])
+
+	* DS9.pm:
+	*** empty log message ***
+
+2002-01-29 21:27 -0500  dj  <dj>  (72ee5488a4d3)
+
+	* MANIFEST:
+	*** empty log message ***
+
+2002-01-29 13:25 -0500  dj  <dj>  (ad82850e6c03)
+
+	* t/dss.t: new file.
+	* t/dss.t:
+	*** empty log message ***
+
+2002-01-29 12:34 -0500  dj  <dj>  (f3d48f8f79a1)
+
+	* Changes, DS9.pm, README:
+	added dss()
+
+2002-01-29 10:03 -0500  dj  <dj>  (fa694b1c4240 [V0_14])
+
+	* MANIFEST, MANIFEST.SKIP:
+	*** empty log message ***
+
+2002-01-28 15:12 -0500  dj  <dj>  (b24bc889a414)
+
+	* Changes, DS9.pm:
+	updated nservers() to track new IPC::XPA::Access API.
+
+2002-01-11 10:01 -0500  dj  <dj>  (78a0b25b23ab [V0_13])
+
+	* MANIFEST.SKIP: new file.
+	* ds9.docs, tds9, tst.pl: deleted file.
+	* LICENSE, MANIFEST, MANIFEST.SKIP, README, ds9.docs, tds9, tst.pl:
+	*** empty log message ***
+
+2002-01-11 09:42 -0500  dj  <dj>  (8beb31bfec44)
+
+	* Changes, DS9.pm, README:
+	*** empty log message ***
+
+2001-10-30 00:26 -0500  dj  <dj>  (952a3ada3019)
+
+	* Changes, DS9.pm:
+	results buffer splitting didn't ignore leading white space, leading
+	to extra leading elements in the returned array. fixed.
+
+2001-10-22 10:18 -0400  dj  <dj>  (ed184875c260)
+
+	* Changes:
+	*** empty log message ***
+
+2001-10-22 10:18 -0400  dj  <dj>  (453e63600ab2)
+
+	* DS9.pm:
+	removed definitions of TRUE and FALSE; was causing Export problems
+
+2001-10-12 13:30 -0400  dj  <dj>  (e624fa3306a9 [V0_11])
+
+	* t/scale.t: new file.
+	* Changes, DS9.pm, t/scale.t:
+	implemented scale datasec
+
+2001-10-11 19:02 -0400  dj  <dj>  (f4c0641a3d00)
+
+	* t/frames.t, t/tile_mode.t: new file.
+	* t/frames.t, t/tile_mode.t:
+	new tests
+
+2001-10-11 19:02 -0400  dj  <dj>  (774da15481ca)
+
+	* Changes, DS9.pm, MANIFEST, Makefile.PL:
+	- frame hide now takes an argument (so can do hide all)
+	- frame all implemented so can get list of all frames
+	- updated tile_mode so that one can set/get the grid mode attributes.
+
+2001-08-14 12:23 -0400  dj  <dj>  (7fa311962105 [V0_106])
+
+	* Changes, DS9.pm:
+	- more aggressive cleaning of WCS keywords
+
+2001-08-13 14:57 -0400  dj  <dj>  (b4b287c1f778 [V0_105])
+
+	* Changes, DS9.pm:
+	- colormap was incorrectly looking at $state instead of
+	$colormap when looking for the inversion tag
+
+2001-08-13 14:18 -0400  dj  <dj>  (91a2785eecf2 [V0_104])
+
+	* Changes:
+	*** empty log message ***
+
+2001-08-13 14:18 -0400  dj  <dj>  (58ffad4b616a)
+
+	* Changes, DS9.pm:
+	- ensured that the CTYPE? WCS keywords are surrounded by
+	apostrophes
+
+2001-07-20 19:57 -0400  dj  <dj>  (3f702f5d57ec [V0_103])
+
+	* DS9.pm:
+	*** empty log message ***
+
+2001-07-20 18:52 -0400  dj  <dj>  (b9ee34379714)
+
+	* DS9.pm:
+	*** empty log message ***
+
+2001-07-20 18:50 -0400  dj  <dj>  (7de81c85ce19)
+
+	* Changes, DS9.pm:
+	didn't create the wcs export tag
+
+2001-03-14 19:25 -0500  dj  <dj>  (af07ffcb4209 [V0_102])
+
+	* Changes, DS9.pm:
+	*** empty log message ***
+
+2001-02-20 18:17 -0500  dj  <dj>  (0e09430e1a76 [V0_10])
+
+	* tds9:
+	*** empty log message ***
+
+2001-02-20 18:00 -0500  dj  <dj>  (229bee6135da)
+
+	* tds9: new file.
+	* tds9:
+	*** empty log message ***
+
+2001-02-20 17:59 -0500  dj  <dj>  (74371de5e004)
+
+	* Changes, DS9.pm:
+	Externals:
+	- added invert option to colormap()
+	- added save option to file()
+	- added bin()
+	- added crosshair()
+	- added cursor()
+	- added lower()
+	- added raise()
+	- added regions()
+	- added wcs()
+	- added view()
+	- renamed T_Grid, T_Column, and T_Row to T_grid, T_column, T_row
+
+	- iconify() didn't return a true/false value (it directly returned
+	what DS9 sent it).
+	- bugs fixed in display() code for queries which had errors
+	- fixed up return for scale(S_limits) to be more consistent
+
+	- Set() and Get() (low level access to XPA channel) are now
+	documented
+
+	Internals:
+	- cleaned up module setup code and creation of export tags
+	- lots more error checking of arguments. this may make following
+	updates to DS9 a little more work, but makes it easier for users
+	of this module
+	- improvements to documentation
+
+2000-09-08 23:32 -0400  dj  <dj>  (edead84fe7b5 [V0_09])
+
+	* Changes, DS9.pm:
+	confused max index with number of elements in check for correct
+	number of arguments for scale( 'limits' )
+
+2000-08-02 18:51 -0400  dj  <dj>  (022e6f366610 [V0_08])
+
+	* DS9.pm:
+	*** empty log message ***
+
+2000-08-02 18:39 -0400  dj  <dj>  (558b191d472b)
+
+	* Changes, DS9.pm, tst.pl:
+	*** empty log message ***
+
+2000-08-02 12:18 -0400  dj  <dj>  (e2a8327211d3)
+
+	* Changes, DS9.pm, tst.pl:
+	*** empty log message ***
+
+2000-07-05 11:35 -0400  dj  <dj>  (98a3fb481911 [V0_07])
+
+	* CONTRIB: new file.
+	* CONTRIB:
+	*** empty log message ***
+
+2000-07-05 10:50 -0400  dj  <dj>  (0adefb5d8352)
+
+	* README:
+	*** empty log message ***
+
+2000-07-05 10:50 -0400  dj  <dj>  (9289d89bc41d)
+
+	* LICENSE, README: new file.
+	* LICENSE, MANIFEST, README:
+	*** empty log message ***
+
+2000-05-11 16:21 -0400  dj  <dj>  (4297a990575f)
+
+	* Changes, DS9.pm:
+	- the frame show command was incorrectly implemented.
+
+2000-05-11 13:49 -0400  dj  <dj>  (be94e1517d5f)
+
+	* Changes, DS9.pm:
+	- max_servers could default to zero if no servers were
+	running; this would cause problems later if one was
+	started up. it now defaults to at least one.
+		- $self->{res} is always updated after Set.
+
+2000-05-10 13:27 -0400  dj  <dj>  (02992724dbbc [V0_06])
+
+	* Changes, DS9.pm:
+	- renamed frame ops once more
+		- renamed file ops to filetype
+		- removed tile() and blink()
+		- move _Set() and _Get to Set() and Get(); no docs yet
+		- added display(), scale(), zoom()
+		- returned buffers from Get are now chomped
+
+2000-05-09 17:52 -0400  dj  <dj>  (90077d28aa10)
+
+	* DS9.pm:
+	more renaming of ops tags.
+
+2000-05-09 17:48 -0400  dj  <dj>  (320c140d2278)
+
+	* DS9.pm:
+	chomp return buf, for convenience
+
+2000-05-09 11:37 -0400  dj  <dj>  (28b58ef12ad1 [V0_05])
+
+	* Changes, DS9.pm:
+	- added more frame op tags
+		- made op tags more readable (lowercased)
+		- added set_attrs method (not yet documented)
+		- set max_servers to nservers() in the constructure
+		- fixed many stupid details I forgot when adding the file method
+
+2000-05-08 20:05 -0400  dj  <dj>  (cbbfb1fc079c)
+
+	* DS9.pm:
+	*** empty log message ***
+
+2000-05-08 19:55 -0400  dj  <dj>  (e1c18cb50406)
+
+	* DS9.pm:
+	*** empty log message ***
+
+2000-05-08 19:43 -0400  dj  <dj>  (95018809de33)
+
+	* DS9.pm:
+	documentation changes
+
+2000-05-08 19:30 -0400  dj  <dj>  (559df2687f4d [V0_04])
+
+	* Changes, DS9.pm:
+	- added file method
+
+2000-05-04 10:04 -0400  dj  <dj>  (7686742a723f [V0_03])
+
+	* Changes, DS9.pm:
+	added min_servers check & croak
+
+2000-05-03 21:55 -0400  dj  <dj>  (b54aaabdba60)
+
+	* GNUmakefile, INSTALL: new file.
+	* GNUmakefile, INSTALL:
+	*** empty log message ***
+
+2000-05-03 21:18 -0400  dj  <dj>  (aa3ea5973bb6)
+
+	* DS9.pm, Makefile.PL:
+	*** empty log message ***
+
+2000-05-02 11:33 -0400  dj  <dj>  (faace87ab5c2)
+
+	* Changes, DS9.pm:
+	revised check for PDL to be cleaner
+
+2000-04-26 15:21 -0400  dj  <dj>  (00d25c36206c)
+
+	* Changes, DS9.pm, tst.pl:
+	- added tile and tile_mode.
+		- if max_server == 1, return nicer output from retrieves.
+
+2000-04-25 15:17 -0400  dj  <dj>  (fa5e7b11d14f [V0_01])
+
+	* 
+
+2000-04-25 15:17 -0400  dj  <dj>  (20a4304b899a)
+
+	* Changes, DS9.pm, MANIFEST, Makefile.PL, ds9.docs, test.pl, tst.pl:
+	new file.
+	* Changes, DS9.pm, MANIFEST, Makefile.PL, ds9.docs, test.pl, tst.pl:
+	Initial revision
+

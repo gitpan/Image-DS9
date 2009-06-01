@@ -1,19 +1,39 @@
-use Test::More tests => 2;
-use Image::DS9 qw( :all );
+use strict;
+use warnings;
 
-my $server = 'test';
-my $dsp = Image::DS9->new( { Server => $server } );
+use Test::More;
+use Image::DS9;
+use Cwd;
 
-unless ( $dsp->nservers )
-{
-  system("ds9 -title $server &");
-  $dsp->wait() or die( "unable to connect to DS9\n" );
-}
+BEGIN { plan( tests => 15 ) }
 
-$dsp->scale( S_datasec, NO );
+require 't/common.pl';
 
-ok( '0' eq $dsp->scale( S_datasec ), 'no datasec' );
 
-$dsp->scale( S_datasec, YES );
+my $ds9 = start_up();
+$ds9->file( cwd. '/m31.fits.gz' );
 
-ok( '1' eq $dsp->scale( S_datasec ), 'datasec' );
+test_stuff( $ds9, (
+		   scale =>
+		   [
+		    [] => 'linear',
+		    [] => 'log',
+		    [] => 'squared',
+		    [] => 'sqrt',
+		    [] => 'histequ',
+		    [] => 'linear',
+		    
+		    datasec => 1,
+		    datasec => 0,
+		    
+		    limits => [1, 100],
+		    mode => 'minmax',
+		    mode => 33,
+		    mode => 'zscale',
+		    mode => 'zmax',
+		    
+		    scope => 'global',
+		    scope => 'local',
+		   ],
+		  ) );
+

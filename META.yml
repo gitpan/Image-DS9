@@ -1,0 +1,25 @@
+---
+abstract: 'interface to the DS9 image display and analysis program'
+author:
+  - 'Diab Jerius ( djerius@cfa.harvard.edu )'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Test::More: 0.31
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.91'
+license: gpl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Image-DS9
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  IPC::XPA: 0.08
+resources:
+  license: http://opensource.org/licenses/gpl-license.php
+version: 0.181

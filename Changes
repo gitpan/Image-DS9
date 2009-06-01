@@ -1,5 +1,52 @@
 Revision history for Perl extension Image::DS9.
 
+0.181  Mon Jun  1 11:34:42 EDT 2009
+        - tests now pass against ds9 5.6.3.  They have not been extended
+	  to match all of the new functionality, but at least they pass.
+
+0.18  Mon Sep 30 20:37:37 EDT 2002
+        - added ResErrXXX options
+	- fixed contour save/load grammar
+	- bin cols could return 3 values; kludge that in
+	- sometimes? when DESTROY'ing object would have undefined xpa
+	  object.  why?? now checks for that.
+	- error message clean up in Parser
+	- now accepts colormap as an alias for cmap.
+
+0.17  Wed Sep 25 17:00:03 EDT 2002
+        - added Image::DS9::Constants
+	- revamped test suite
+
+0.16  Mon Sep 23 18:34:45 EDT 2002
+
+        - most of DS9's access points are now supported.
+
+        - now uses a table driven parser to generate the methods and
+          data conversion between Perl and DS9.
+
+        - realized the futility of keeping the docs up-to-date in
+	  parallel with DS9.  Now just list the options supported,
+	  rather than duplicate the DS9 docs.
+
+        - the display() and tile_mode() methods are no longer supported.
+          display() was an attempt to unify tile, blink, and single
+          in a clean way.  I've decided to just track the actual
+	  XPA access methods rather than foist my view of how things
+	  should tie together. So, display() should be replaced with
+	  the appropriate calls to tile(), blink(), or single().
+	  tile_mode() was really tile() all along...
+
+        - earlier versions of this package had a gadzillion constants
+          for all of the commands and subcommands and enumerated values.
+          this was a real mess.  the constants are now in their own
+          package (Image::DS9::OldConstants), and are deprecated.
+
+0.15  Tue Jan 29 12:27:06 EST 2002
+        - added dss()
+
+0.14  Mon Jan 28 15:12:24 EST 2002
+        - updated nservers() to track new IPC::XPA::Access API.
+
 0.13  Tue Oct 30 00:24:14 EST 2001
 	- results buffer splitting didn't ignore leading white space,
 	  leading to extra leading elements in the returned array.

@@ -1,5 +1,5 @@
 		       =======================
-		       Image::DS9 Version 0.13
+		       Image::DS9 Version 0.17
 		       =======================
 
 
@@ -15,9 +15,9 @@ DESCRIPTION
     analysis program.  While targeted at the astronomical community,
     it is versatile enough to be used with success by others.
 
-    Image::DS9 is in a very embryonic state; it does not support all
-    of DS9's features, and the API may change.  It is being developed
-    to interoperate with PDL.
+    Image::DS9 communicates with DS9 via the XPA librariy.
+    It supports most of DS9's XPA access points.  It is
+    built to interoperate with PDL.
 
     For details on DS9, including the source (and binaries for some
     platforms), please refer to
@@ -32,13 +32,13 @@ DEPENDENCIES
 
 	http://hea-www.harvard.edu/RD/xpa/
 
-    It requires DS9 v2.1. Due to a change in the colormap XPA access
+    It requires DS9 v2.2. Due to a change in the colormap XPA access
     point, it is not compatible with older versions of DS9.  Sorry!
 
 INSTALLATION
 
-    This package has been tested on Perl 5.6.0, and xpa 2.0.3.
-    It has been tested on Solaris 2.6 and Solaris 2.8.
+    This package has been tested on Perl 5.6.0, and xpa 2.1.2.
+    It has been tested on Solaris 2.8.
 
     You will need to install IPC::XPA first.
 
@@ -57,7 +57,41 @@ INSTALLATION
 
 CHANGES
 
-    See the Changes file for more details.
+    Major changes only. See the Changes file for more details.
+
+    0.17
+    ----
+      - Image::DS9::Constants added, to get at the constants in the
+        new, approved, fashion.
+
+    0.16
+    ----
+      - most of DS9's access points are now supported.
+
+      - now uses a table driven parser to generate the methods and
+        data conversion between Perl and DS9.
+
+      - realized the futility of keeping the docs up-to-date in
+        parallel with DS9.  Now just list the options supported,
+	rather than duplicate the DS9 docs.
+
+      - the display() and tile_mode() methods are no longer supported.
+        display() was an attempt to unify tile, blink, and single
+        in a clean way.  I've decided to just track the actual
+	XPA access methods rather than foist my view of how things
+	should tie together. So, display() should be replaced with
+	the appropriate calls to tile(), blink(), or single().
+	tile_mode() was really tile() all along...
+
+      - earlier versions of this package had a gadzillion constants
+        for all of the commands and subcommands and enumerated values.
+        this was a real mess.  the constants have been moved to
+	Image::DS9::OldConstants, and are deprecated.
+	
+
+    0.15 
+    ----
+      Added dss().
 
     0.13
     ----
