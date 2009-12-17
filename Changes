@@ -1,5 +1,12 @@
 Revision history for Perl extension Image::DS9.
 
+0.182  Wed Dec 16 20:24:39 EST 2009
+
+        - updated grammar to match DS9 5.7 for commands cd, frame,
+          height, width, view, frame
+	- fixed broken wcs append & replace
+        - added pan query for just physical & image
+
 0.181  Mon Jun  1 11:34:42 EDT 2009
         - tests now pass against ds9 5.6.3.  They have not been extended
 	  to match all of the new functionality, but at least they pass.

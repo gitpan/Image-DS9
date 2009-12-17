@@ -9,6 +9,7 @@ DS9/Grammar.pm
 DS9/OldConstants.pm
 DS9/Parser.pm
 DS9/PConsts.pm
+foo.wcs
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
@@ -18,7 +19,6 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
-INSTALL
 LICENSE
 m31.fits.gz
 Makefile.PL
@@ -60,4 +60,5 @@ t/version.t
 t/view.t
 t/wcs.t
 t/zoom.t
+test
 TODO

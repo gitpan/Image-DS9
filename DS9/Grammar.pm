@@ -135,6 +135,17 @@ our %Grammar =
 
 #------------------------------------------------------
 
+   cd =>
+   [
+    [
+     [],
+     { args => [STRING] }
+    ]
+   ],
+
+
+#------------------------------------------------------
+
    cmap =>
    [ 
     [
@@ -541,8 +552,28 @@ our %Grammar =
     ],
 
     [
+     ['new', 'rgb'],
+     { query => QNONE }
+    ],
+
+
+    [
      ['new'],
      { query => QNONE }
+    ],
+
+    [
+     ['center'],
+     { query => QNONE },
+     { args => [ INT ], query => QNONE },
+     { args => [ ENUM( 'all' ) ], query => QNONE }
+    ],
+
+    [
+     ['clear'],
+     { query => QNONE },
+     { args => [ INT ], query => QNONE },
+     { args => [ ENUM( 'all' ) ], query => QNONE }
     ],
 
     [
@@ -554,27 +585,41 @@ our %Grammar =
 
     [
      ['reset'],
-     { query => QNONE }
+     { query => QNONE },
+     { args => [ INT ], query => QNONE },
+     { args => [ ENUM( 'all' ) ], query => QNONE }
     ],
 
     [
      ['refresh'],
-     { query => QNONE }
-    ],
-
-    [
-     ['center'],
-     { query => QNONE }
+     { query => QNONE },
+     { args => [ INT ], query => QNONE },
+     { args => [ ENUM( 'all' ) ], query => QNONE }
     ],
 
     [
      ['hide'],
-     { query => QNONE }
+     { query => QNONE },
+     { args => [ INT ], query => QNONE },
+     { args => [ ENUM( 'all' ) ], query => QNONE }
     ],
 
     [
      ['show'],
+     { query => QNONE },
      { args => [ INT ], query => QNONE },
+     { args => [ ENUM( 'all' ) ], query => QNONE }
+
+    ],
+
+    [
+     ['move'],
+     { args => [ ENUM( 'first', 'back', 'forward', 'last' ) ], query => QNONE }
+    ],
+
+    [
+     ['frameno'],
+     { args => [ INT ] },
     ],
 
     [
@@ -606,6 +651,17 @@ our %Grammar =
     ],
 
    ],
+
+#------------------------------------------------------
+
+   height =>
+   [
+    [
+     [],
+     { args => [INT] }
+    ]
+   ],
+
 
 #------------------------------------------------------
 
@@ -763,20 +819,14 @@ our %Grammar =
      { args => [ COORD_RA, COORD_DEC, COORDSYS ], query => QNONE },
      { args => [ COORD_RA, COORD_DEC, COORDSYS, SKYFORMAT ], query => QNONE },
      { args => [ COORD_RA, COORD_DEC, COORDSYS, SKYFRAME  ], query => QNONE },
-     { args => [ COORD_RA, COORD_DEC, COORDSYS, SKYFRAME, SKYFORMAT ], 
+     { args => [ COORD_RA, COORD_DEC, COORDSYS, SKYFRAME, SKYFORMAT ],
        query => QNONE },
 
      { rvals => [STRING, STRING],
        cvt => 0
      },
 
-     { args => [ COORDSYS, SKYFRAME ],
-       query => QONLY,
-       rvals => [STRING, STRING],
-       cvt => 0
-     },
-
-     { args => [ COORDSYS, SKYFORMAT ], 
+     { args => [ COORDSYS, SKYFORMAT ],
        query => QONLY,
        rvals => [STRING, STRING],
        cvt => 0
@@ -787,6 +837,20 @@ our %Grammar =
        rvals => [STRING, STRING],
        cvt => 0
      },
+
+     { args => [ COORDSYS, SKYFRAME ],
+       query => QONLY,
+       rvals => [STRING, STRING],
+       cvt => 0
+     },
+
+     { args => [ COORDSYS ],
+       query => QONLY,
+       rvals => [STRING, STRING],
+       cvt => 0
+     },
+
+
     ],
 
    ],
@@ -1123,8 +1187,47 @@ our %Grammar =
    view =>
    [
     [
-     [ENUM( qw( info panner magnifier
-		buttons colorbar horzgraph vertgraph ) )],
+     [ENUM( qw( info
+		panner
+		magnifier
+		buttons
+		filename
+		object
+		minmax
+		lowhigh
+		frame
+		red
+		green
+		blue
+	     ) )],
+     { args => [ BOOL ] },
+    ],
+
+    [
+     ['layout'],
+     { args => [ ENUM( 'vertical', 'horizontal' ) ] },
+    ],
+
+
+    [
+     ['colorbar', 'numerics' ],
+     { args => [ BOOL ] },
+    ],
+
+
+    [
+     ['colorbar'],
+     { args => [ ENUM( 'vertical', 'horizontal' ) ] },
+     { args => [ BOOL ] },
+    ],
+
+    [
+     ['graph', 'vertical' ],
+     { args => [ BOOL ] },
+    ],
+
+    [
+     ['graph', 'horizontal' ],
      { args => [ BOOL ] },
     ],
 
@@ -1203,9 +1306,20 @@ our %Grammar =
 
    web =>
    [
-    [ 
-     [], 
+    [
+     [],
      { args => [STRING] }
+    ]
+   ],
+
+
+#------------------------------------------------------
+
+   width =>
+   [
+    [
+     [],
+     { args => [INT] }
     ]
    ],
 

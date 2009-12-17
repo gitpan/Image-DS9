@@ -243,24 +243,19 @@ our %TypeCvt = (
 			 my $wcs = '';
 			 while( my ($key, $val ) = each %{$_[0]} )
 			 {
+			   # remove blank lines
+			   next if $key eq '';
+
 			   # aggressively remove surrounding apostrophes
 			   $val =~ s/^'+//;
-	                    $val =~ s/'+$//;
+	                   $val =~ s/'+$//;
 
 			   # remove unnecessary blanks
 			   $val =~ s/^\s+//;
 			   $val =~ s/\s+$//;
 
-			   # ensure that CTYPE value is surrounded by apostrophes
-			   if ( uc($key) =~ 'CTYPE' &&
-				$val !~ /^'.*'$/ )
-			   {
-			     $wcs .= uc($key) . " '$val'\n"
-			   }
-			   else
-			   {
-			     $wcs .= uc($key) . " $val\n"
-			   }
+			   # surround all values with apostrophes
+			   $wcs .= uc( $key ) . ($val ne '' ? " = '$val'\n" : "\n" );
 			 }
 			 $wcs;
 		       }

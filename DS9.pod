@@ -53,7 +53,7 @@ C<yes>, C<no>, or the integers C<1> or C<0>.
 =head2 Return Values
 
 Because a single B<Image::DS9> object may communicate with multiple
-instances of B<DS9>, queries may return more than one value.  
+instances of B<DS9>, queries may return more than one value.
 Because one usually communicates with a single B<DS9> instance,
 if a query is made in scalar mode, the result is returned as a scalar,
 i.e.:
@@ -87,7 +87,7 @@ When queries are made in list mode, the return values are hashes,
 rather than scalars.  The hash has as keys the names of the servers,
 with the values being references to hashes with the keys C<name>,
 C<buf> and C<message>.  The C<message> element is present if there was
-an error. The C<buf> element contains the results of a query. 
+an error. The C<buf> element contains the results of a query.
 
 For example,
 
@@ -321,7 +321,7 @@ number (similar to the B<FITS> standard).
 =item bin
 
 The following options are supported:
-    
+
 C<about>,
 C<buffersize>,
 C<cols>,
@@ -341,6 +341,11 @@ To query the whether blink is on:
 To turn blink on:
 
    $dsp->blink;
+
+=item cd
+
+  $dsp->cd( $dir );
+  $dir = $dsp->cd;
 
 =item cmap
 
@@ -427,7 +432,7 @@ return the current file name loaded for the current frame:
 
 Save the frame as a file:
 
-  $dsp->file( 'save', [[<save options>>,]] $file ); 
+  $dsp->file( 'save', [[<save options>>,]] $file );
 
 Display the specified C<$file>.
 
@@ -440,7 +445,7 @@ the B<DS9> docs), as well as the following options:
 
 =item C<new> I<boolean>
 
-create a new frame.  
+create a new frame.
 
 =item C<bin> I<columns>.
 
@@ -474,7 +479,7 @@ The available attributes are
 
 =item C<new> I<boolean>
 
-create a new frame.  
+create a new frame.
 
 =item C<bin> I<columns>.
 
@@ -496,18 +501,22 @@ A B<DS9> filter specification
 
 The following options are supported:
 
-C<all>,
+C<center>,
+C<clear>,
+C<new>,
+C<delete>,
+C<reset>,
+C<refresh>,
+C<hide>,
+C<show>,
+C<move>,
 C<first>,
 C<next>,
 C<prev>,
 C<last>,
-C<new>,
-C<delete>,
-C<refresh>,
-C<reset>,
+C<frameno>,
+C<all>,
 C<center>,
-C<hide>,
-C<show>
 
 To load a particular frame, specify the frame number as the argument:
 
@@ -516,13 +525,18 @@ To load a particular frame, specify the frame number as the argument:
 The C<all> option returns an array of the frames:
 
    $array_ref = $dsp->frame( 'all' );
-   
+
 =item grid
 
-The C<load> and C<save> options are supported.  
+The C<load> and C<save> options are supported.
 
 With a boolean argument, specify the state of the coordinate grid, else
 return it.
+
+=item height
+
+  $dsp->height( $height );
+  $height = $dsp->height;
 
 =item iconify
 
@@ -599,7 +613,7 @@ or C<rel> or unspecified for a relative pan.
 
 To get the pan position:
 
-  $pan = $dsp->pan( 
+  $pan = $dsp->pan(
           [[ <coordinate system> [[,<sky frame>]] [[,<sky format>]] ]] );
 
 =item pixeltable
@@ -690,7 +704,7 @@ keys: C<-format>, C<-system>, C<-sky>, C<-skyformat>, C<-strip>.
 
 =item saveas
 
-The following options are supported: 
+The following options are supported:
 
 C<jpeg>,
 C<tiff>,
@@ -699,7 +713,7 @@ C<ppm>.
 
 =item scale
 
-The following options are supported: 
+The following options are supported:
 
 C<datasec>,
 C<limits>,
@@ -772,17 +786,25 @@ Queries and returns B<DS9>'s version.
 
 Supported options are:
 
+C<layout>,
 C<info>,
 C<panner>,
 C<magnifier>,
 C<buttons>,
 C<colorbar>,
-C<horzgraph>,
-C<vergraph>,
-C<physical>,
+C<graph>,
+C<filename>,
+C<object>,
+C<minmax>,
+C<lowhigh>,
+C<frame>,
 C<image>,
+C<physical>,
 C<wcs>,
 C<wcsa>..C<wcsz>.
+C<red>,
+C<green>,
+C<blue>
 
 =item vo
 
@@ -825,6 +847,11 @@ Query the appropriate options by not passing a value for the option.
 =item web
 
 Set (or query) the web address in B<DS9>'s built in browser.
+
+=item width
+
+  $dsp->width( $width );
+  $width = $dsp->width;
 
 =item zoom
 
@@ -938,7 +965,7 @@ B<XPA> is available at C<http://hea-www.harvard.edu/RD/xpa/>.
 =head1 LICENSE
 
 This software is released under the GNU General Public License.  You
-may find a copy at 
+may find a copy at
 
    http://www.fsf.org/copyleft/gpl.html
 

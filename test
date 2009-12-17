@@ -1,0 +1,14 @@
+use blib;
+use Image::DS9;
+use PDL;
+use Astro::FITS::CFITSIO::Simple qw[ rdfits ];
+
+$ds9 = Image::DS9->new( { Server => 'test' } );
+
+$ds9->frame( 'new' );
+
+$i = rdfits( 'm31.fits.gz' );
+$ds9->array( $i );
+
+use Data::Dumper;
+print Dumper scalar $ds9->pan( 'physical' ), "\n";

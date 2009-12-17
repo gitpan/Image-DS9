@@ -1,4 +1,65 @@
-2009-06-01 11:51 -0400  djerius  <djerius@cfa.harvard.edu>  (314137436a2a [tip])
+2009-12-16 20:23 -0500  djerius  <djerius@cfa.harvard.edu>  (4f0cb3a9e266 [tip])
+
+	* INSTALL: deleted file.
+	* INSTALL:
+	remove unneeded file
+
+2009-12-16 20:22 -0500  djerius  <djerius@cfa.harvard.edu>  (d5a984459977)
+
+	* DS9.pm:
+	bump version
+
+2009-12-16 20:21 -0500  djerius  <djerius@cfa.harvard.edu>  (6b9d2ef6341b)
+
+	* DS9.pod:
+	update docs to reflect recent changes
+
+2009-12-16 20:19 -0500  djerius  <djerius@cfa.harvard.edu>  (a22329d66633)
+
+	* DS9/Grammar.pm:
+	added pan query of just coordsys
+
+2009-12-16 20:10 -0500  djerius  <djerius@cfa.harvard.edu>  (c50eaed7c5dc)
+
+	* DS9/Grammar.pm:
+	added cd command
+
+2009-12-16 20:06 -0500  djerius  <djerius@cfa.harvard.edu>  (27d82cf9c24f)
+
+	* DS9/Grammar.pm:
+	added frame new rgb command
+
+2009-12-16 20:01 -0500  djerius  <djerius@cfa.harvard.edu>  (26e43b83692e)
+
+	* DS9/Grammar.pm:
+	added height and width commands
+
+2009-12-16 19:40 -0500  djerius  <djerius@cfa.harvard.edu>  (18d4b7dff24b)
+
+	* DS9/Grammar.pm:
+	updated view subcommands to ds9 5.7
+
+2009-12-16 19:27 -0500  djerius  <djerius@cfa.harvard.edu>  (ad14152f0768)
+
+	* DS9/Grammar.pm:
+	updated frame subcommands to ds9 5.7
+
+2009-12-16 19:16 -0500  djerius  <djerius@cfa.harvard.edu>  (59f6e44f28a7)
+
+	* DS9/PConsts.pm:
+	wcs append/replace wasn't working; fixed
+
+2009-06-01 11:52 -0400  djerius  <djerius@cfa.harvard.edu>  (50aee92ddb0b)
+
+	* .hgtags:
+	Added tag 0.181 for changeset 4cfbb94db92a
+
+2009-06-01 11:52 -0400  djerius  <djerius@cfa.harvard.edu>  (4cfbb94db92a [0.181])
+
+	* ChangeLog, Changes, DS9.pm:
+	update version and logs for release
+
+2009-06-01 11:51 -0400  djerius  <djerius@cfa.harvard.edu>  (314137436a2a)
 
 	* Makefile.PL:
 	now use Module::Install
